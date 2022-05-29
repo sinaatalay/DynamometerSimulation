@@ -32,6 +32,7 @@ L_l=L_t;            % [H]
 LoadMotor=[K_emf_l, K_T_l, R_l_minimum, L_l];
 %% PID Control
 DesiredLoad=0.752;  % [Nm]
+% When the controlling starts:
 StartControl= 10;   % [s]
 
 % *Tuning:*
@@ -47,6 +48,8 @@ D=[0;0];
 
 [t,x] = ode15s(@(t,x) xDot(t, x, DesiredLoad, StartControl, PIDTune, TestMotor, Connection, LoadMotor), [0,30], [0,0,0]);
 y=C*x';
+
+% Plot the results:
 yyaxis left
 plot(t,y(1,:));
 hold on;
