@@ -2,7 +2,6 @@
 % Spring 2022
 % Simulation of an electric dynamometer with a PID controller.
 clc
-%%
 clear CalculateR_l
 close all
 %% Specifications of the system
