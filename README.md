@@ -1,10 +1,10 @@
-# Dynamometer Simulation [![License](https://img.shields.io/github/license/sinaatalay/DynamometerSimulation.svg)](https://github.com/sinaatalay/DynamometerSimulation/blob/master/LICENSE)
+# Dynamometer Simulation [![License](https://img.shields.io/github/license/sinaatalay/DynamometerSimulation.svg)](https://github.com/sinaatalay/DynamometerSimulation/blob/main/LICENSE)
 This program simulates an electric dynamometer with a PID controller.
 
 An **absorption dynamometer**, also known as a" **dyno**", is a device that measures the instantaneous rotational speed and torque of an engine, motor, or any rotating prime mover while acting as a load. This is accomplished by using various methods to brake the tested motor. Electric dynamometers use another DC motor (a **load motor**) as a generator and couple it with the **test motor** to produce an opposing torque that resists the motion. The graphical representation of the dynamometer is illustrated below.
 
 <p align="center">
-  <img src="https://github.com/sinaatalay/DynamometerSimulation/blob/master/figures/Schematic.png?raw=true" alt="Schematic"/>
+  <img src="https://github.com/sinaatalay/DynamometerSimulation/blob/main/figures/Schematic.png?raw=true" alt="Schematic"/>
 </p>
 
 We want to control the torque of the test motor by adjusting R<sub>l</sub>. The system is modeled using the fundamental principles, and the state-space representation of the system model is shown below.
@@ -16,5 +16,5 @@ We want to control the torque of the test motor by adjusting R<sub>l</sub>. The 
 The objective is to simulate the system's closed-loop response to investigate the behavior. The tricky part is that R<sub>l</sub> is not a standard input like a voltage or current source but rather a property of the system. This makes the system a time-variant system and hard to analyze with the [Control System Toolbox](https://www.mathworks.com/products/control.html) of [MATLAB](https://www.mathworks.com/products/matlab.html). Fortunately, the system is linear, and the closed-loop response is simulated with the [ode15s](https://www.mathworks.com/help/matlab/ref/ode15s.html) function. The block diagram of the system can be seen below.
 
 <p align="center">
-  <img src="https://github.com/sinaatalay/DynamometerSimulation/blob/master/figures/BlockDiagram.png?raw=true" alt="BlockDiagram"/>
+  <img src="https://github.com/sinaatalay/DynamometerSimulation/blob/main/figures/BlockDiagram.png?raw=true" alt="BlockDiagram"/>
 </p>
